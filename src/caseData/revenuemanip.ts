@@ -12,51 +12,50 @@ const revenuemanip: CaseData = {
   briefing:
     "Greenleaf Organics has been a market darling, growing revenue by 60% this year. " +
     "But forensic accountants have noticed something troubling: revenue growth doesn't " +
-    "match cash collections, and there are unexplained adjustments to revenue accounts. " +
-    "Suspected loss: Rs 72,00,000. Status: Active Investigation.",
+    "match cash collections, and there are unexplained adjustments to revenue accounts.",
   vendorsUnlockRound: 1,
 
   suspects: [
   { id: 'S01', name: 'Meera Reddy', position: 'CEO', responsibilities: [], redFlag: 'Pushed aggressive revenue targets' },
   { id: 'S02', name: 'Karan Joshi', position: 'CFO', responsibilities: [], redFlag: 'Approved unusual revenue adjustments' },
-  { id: 'S03', name: 'Sanjay Gupta', position: 'Sales Head', responsibilities: [], redFlag: 'Reported fictitious sales (KEY)' },
+  { id: 'S03', name: 'Sanjay Gupta', position: 'Sales Head', responsibilities: [], redFlag: 'Reported fictitious sales' },
   { id: 'S04', name: 'Anita Desai', position: 'Accounts Receivable', responsibilities: [], redFlag: 'Manipulated aging reports' },
   { id: 'S05', name: 'Rajesh Pillai', position: 'Sales Manager', responsibilities: [], redFlag: 'Created fake customer accounts' },
   { id: 'S06', name: 'Priya Malhotra', position: 'External Auditor', responsibilities: [], redFlag: 'Allegedly looked the other way' }
   ],
 
   vendors: [
-  { id: 'V01', name: 'Fresh Farms Produce', contact: 'Sunita Sharma', established: '12 Feb 2023', bank: 'HDFC ****6721', location: '', business: 'Produce Supply', notes: 'Annual payments Rs 36,50,000. Flagged Suspicious. Newest vendor, incorporated weeks before the aggressive revenue push in C01. No business filings prior to registration. Registered office is a shared co-working address also listed for two other Greenleaf vendors. TXN-0218 invoiced at a higher quantity than PO-1265 authorized.' },
-  { id: 'V02', name: 'Organic Express', contact: 'Vikram Reddy', established: '05 Jun 2022', bank: 'ICICI ****3380', location: '', business: 'Cold-Chain Transport', notes: 'Annual payments Rs 28,40,000. Flagged Suspicious. Vikram Reddy is a distant cousin of Sanjay Gupta (Sales Head) — never disclosed on the vendor onboarding form. Operates with only one listed employee despite this payment volume. INV-2246 billed Rs 5,35,000 against PO-1145 authorized for Rs 4,10,000, no revised PO on file.' },
-  { id: 'V03', name: 'Premium Harvest', contact: 'Amit Singh', established: '18 Mar 2020', bank: 'SBI ****4491', location: '', business: 'Bulk Organic Grain Supply', notes: "Annual payments Rs 52,80,000. Not flagged. Greenleaf's longest-standing bulk-grain supplier, four-year track record, no discrepancies. Every PO, invoice, and GRN matches exactly. Bank account unchanged since onboarding. Treated as a clean baseline vendor." },
-  { id: 'V04', name: 'Green Logistics', contact: 'Pooja Mehta', established: '22 Nov 2019', bank: 'Axis ****8823', location: '', business: 'Freight', notes: 'Annual payments Rs 22,60,000. Not flagged. Original freight partner, predates current management. Flat monthly freight contract, never the subject of an aging or quantity discrepancy. Legitimate reference point.' },
-  { id: 'V05', name: 'Natural Packaging', contact: 'Suresh Kumar', established: '09 Sep 2021', bank: 'HDFC ****5519', location: '', business: 'Packaging', notes: "Annual payments Rs 18,40,000. Flagged Suspicious. Registrar cross-check found the same incorporation agent used to set up all four fictitious customer accounts. Suresh Kumar's registered mobile number partially matches a contact number on one fictitious customer application (unconfirmed link). INV-2320 and INV-2410 show quantities/prices above their POs, no GRN filed for the excess." }
+  { id: 'V01', name: 'Fresh Farms Produce', contact: 'Sunita Sharma', established: '12 Feb 2023', bank: 'HDFC ****6721', location: '', business: 'Produce Supply', notes: 'Annual payments ₹36,50,000. Flagged Suspicious. Newest vendor, incorporated weeks before the aggressive revenue push in C01. No business filings prior to registration. Registered office is a shared co-working address also listed for two other Greenleaf vendors. TXN-0218 invoiced at a higher quantity than PO-1265 authorized.' },
+  { id: 'V02', name: 'Organic Express', contact: 'Vikram Reddy', established: '05 Jun 2022', bank: 'ICICI ****3380', location: '', business: 'Cold-Chain Transport', notes: 'Annual payments ₹28,40,000. Flagged Suspicious. Vikram Reddy is a distant cousin of Sanjay Gupta (Sales Head) — never disclosed on the vendor onboarding form. Operates with only one listed employee despite this payment volume. INV-2246 billed ₹5,35,000 against PO-1145 authorized for ₹4,10,000, no revised PO on file.' },
+  { id: 'V03', name: 'Premium Harvest', contact: 'Amit Singh', established: '18 Mar 2020', bank: 'SBI ****4491', location: '', business: 'Bulk Organic Grain Supply', notes: "Annual payments ₹52,80,000. Not flagged. Greenleaf's longest-standing bulk-grain supplier, four-year track record, no discrepancies. Every PO, invoice, and GRN matches exactly. Bank account unchanged since onboarding. Treated as a clean baseline vendor." },
+  { id: 'V04', name: 'Green Logistics', contact: 'Pooja Mehta', established: '22 Nov 2019', bank: 'Axis ****8823', location: '', business: 'Freight', notes: 'Annual payments ₹22,60,000. Not flagged. Original freight partner, predates current management. Flat monthly freight contract, never the subject of an aging or quantity discrepancy. Legitimate reference point.' },
+  { id: 'V05', name: 'Natural Packaging', contact: 'Suresh Kumar', established: '09 Sep 2021', bank: 'HDFC ****5519', location: '', business: 'Packaging', notes: "Annual payments ₹18,40,000. Flagged Suspicious. Registrar cross-check found the same incorporation agent used to set up all four fictitious customer accounts. Suresh Kumar's registered mobile number partially matches a contact number on one fictitious customer application (unconfirmed link). INV-2320 and INV-2410 show quantities/prices above their POs, no GRN filed for the excess." }
   ],
 
   financials: {
     overview: [
-      { metric: "Revenue", lastYear: "Rs 8.2 Cr", thisYear: "Rs 13.1 Cr" },
-      { metric: "Expenses", lastYear: "Rs 6.1 Cr", thisYear: "Rs 9.8 Cr" },
-      { metric: "Profit", lastYear: "Rs 2.1 Cr", thisYear: "Rs 3.3 Cr" },
-      { metric: "Cash", lastYear: "Rs 1.8 Cr", thisYear: "Rs 0.5 Cr" },
+      { metric: "Revenue", lastYear: "₹8.2 Cr", thisYear: "₹13.1 Cr" },
+      { metric: "Expenses", lastYear: "₹6.1 Cr", thisYear: "₹9.8 Cr" },
+      { metric: "Profit", lastYear: "₹2.1 Cr", thisYear: "₹3.3 Cr" },
+      { metric: "Cash", lastYear: "₹1.8 Cr", thisYear: "₹0.5 Cr" },
     ],
     vendorSpend: [
-      { vendor: "Fresh Farms Produce", lastYear: "", thisYear: "Rs 36,50,000" },
-      { vendor: "Organic Express", lastYear: "", thisYear: "Rs 28,40,000" },
-      { vendor: "Premium Harvest", lastYear: "", thisYear: "Rs 52,80,000" },
-      { vendor: "Green Logistics", lastYear: "", thisYear: "Rs 22,60,000" },
-      { vendor: "Natural Packaging", lastYear: "", thisYear: "Rs 18,40,000" },
+      { vendor: "Fresh Farms Produce", lastYear: "", thisYear: "₹36,50,000" },
+      { vendor: "Organic Express", lastYear: "", thisYear: "₹28,40,000" },
+      { vendor: "Premium Harvest", lastYear: "", thisYear: "₹52,80,000" },
+      { vendor: "Green Logistics", lastYear: "", thisYear: "₹22,60,000" },
+      { vendor: "Natural Packaging", lastYear: "", thisYear: "₹18,40,000" },
     ],
   },
 
   documents: [
   {"id": "PO-1101", "vendor": "Fresh Farms Produce", "po": {"number": "PO-1101", "product": "Organic Vegetable Crates", "quantity": 800, "unitPrice": 625, "total": 500000}, "invoice": {"number": "INV-2201", "matchedPO": "PO-1101", "quantityBilled": 800, "unitPrice": 625, "totalBilled": 500000, "matchStatus": "Clean match"}},
-  {"id": "PO-1145", "vendor": "Organic Express", "po": {"number": "PO-1145", "product": "Cold-Chain Transport Contract", "quantity": 1, "unitPrice": 410000, "total": 410000}, "invoice": {"number": "INV-2246", "matchedPO": "PO-1145", "quantityBilled": 1, "unitPrice": 535000, "totalBilled": 535000, "matchStatus": "Discrepancy \u2014 price exceeds PO, no revision on file"}, "flag": "Discrepancy \u2014 price exceeds PO, no revision on file"},
+  {"id": "PO-1145", "vendor": "Organic Express", "po": {"number": "PO-1145", "product": "Cold-Chain Transport Contract", "quantity": 1, "unitPrice": 410000, "total": 410000}, "invoice": {"number": "INV-2246", "matchedPO": "PO-1145", "quantityBilled": 1, "unitPrice": 535000, "totalBilled": 535000, "matchStatus": "Discrepancy \u2014 price exceeds PO, no revision on file"}},
   {"id": "PO-1190", "vendor": "Premium Harvest", "po": {"number": "PO-1190", "product": "Bulk Organic Grain Supply", "quantity": 1400, "unitPrice": 800, "total": 1120000}, "invoice": {"number": "INV-2290", "matchedPO": "PO-1190", "quantityBilled": 1400, "unitPrice": 800, "totalBilled": 1120000, "matchStatus": "Clean match"}},
-  {"id": "PO-1220", "vendor": "Natural Packaging", "po": {"number": "PO-1220", "product": "Recyclable Packaging Rolls", "quantity": 2000, "unitPrice": 210, "total": 420000}, "invoice": {"number": "INV-2320", "matchedPO": "PO-1220", "quantityBilled": 3200, "unitPrice": 210, "totalBilled": 672000, "matchStatus": "Discrepancy \u2014 quantity exceeds PO, no GRN for excess"}, "flag": "Discrepancy \u2014 quantity exceeds PO, no GRN for excess"},
-  {"id": "PO-1265", "vendor": "Fresh Farms Produce", "po": {"number": "PO-1265", "product": "Organic Vegetable Crates (Repeat Order)", "quantity": 1000, "unitPrice": 625, "total": 625000}, "invoice": {"number": "INV-2365", "matchedPO": "PO-1265", "quantityBilled": 1328, "unitPrice": 625, "totalBilled": 830000, "matchStatus": "Discrepancy \u2014 quantity exceeds PO by 328 units"}, "flag": "Discrepancy \u2014 quantity exceeds PO by 328 units"},
+  {"id": "PO-1220", "vendor": "Natural Packaging", "po": {"number": "PO-1220", "product": "Recyclable Packaging Rolls", "quantity": 2000, "unitPrice": 210, "total": 420000}, "invoice": {"number": "INV-2320", "matchedPO": "PO-1220", "quantityBilled": 3200, "unitPrice": 210, "totalBilled": 672000, "matchStatus": "Discrepancy \u2014 quantity exceeds PO, no GRN for excess"}},
+  {"id": "PO-1265", "vendor": "Fresh Farms Produce", "po": {"number": "PO-1265", "product": "Organic Vegetable Crates (Repeat Order)", "quantity": 1000, "unitPrice": 625, "total": 625000}, "invoice": {"number": "INV-2365", "matchedPO": "PO-1265", "quantityBilled": 1328, "unitPrice": 625, "totalBilled": 830000, "matchStatus": "Discrepancy \u2014 quantity exceeds PO by 328 units"}},
   {"id": "PO-1288", "vendor": "Green Logistics", "po": {"number": "PO-1288", "product": "Monthly Freight Contract", "quantity": 1, "unitPrice": 390000, "total": 390000}, "invoice": {"number": "INV-2388", "matchedPO": "PO-1288", "quantityBilled": 1, "unitPrice": 390000, "totalBilled": 390000, "matchStatus": "Clean match"}},
-  {"id": "PO-1310", "vendor": "Natural Packaging", "po": {"number": "PO-1310", "product": "Compostable Pouches", "quantity": 1800, "unitPrice": 275, "total": 495000}, "invoice": {"number": "INV-2410", "matchedPO": "PO-1310", "quantityBilled": 1800, "unitPrice": 289, "totalBilled": 520200, "matchStatus": "Discrepancy \u2014 unit price above PO rate"}, "flag": "Discrepancy \u2014 unit price above PO rate"}
+  {"id": "PO-1310", "vendor": "Natural Packaging", "po": {"number": "PO-1310", "product": "Compostable Pouches", "quantity": 1800, "unitPrice": 275, "total": 495000}, "invoice": {"number": "INV-2410", "matchedPO": "PO-1310", "quantityBilled": 1800, "unitPrice": 289, "totalBilled": 520200, "matchStatus": "Discrepancy \u2014 unit price above PO rate"}}
   ],
 
   transactions: [
@@ -83,7 +82,7 @@ const revenuemanip: CaseData = {
   ],
 
   communications: [
-    { id: 'C01', date: '2026-01-20', from: 'Meera Reddy', to: 'Sanjay Gupta', message: 'We need to hit Rs 50 Cr this year. Find a way to make it happen. (Email)' },
+    { id: 'C01', date: '2026-01-20', from: 'Meera Reddy', to: 'Sanjay Gupta', message: 'We need to hit ₹50 Cr this year. Find a way to make it happen. (Email)' },
     { id: 'C02', date: '2026-02-01', from: 'Sanjay Gupta', to: 'Rajesh Pillai', message: 'Create a few new accounts. We need to show early momentum. (WhatsApp)' },
     { id: 'C03', date: '2026-02-15', from: 'Rajesh Pillai', to: 'Anita Desai', message: 'Can you hold the aging report? Need to adjust some entries. (Email)' },
     { id: 'C04', date: '2026-03-10', from: 'Anita Desai', to: 'Sanjay Gupta', message: "The auditors are asking about Customer B. What's the status? (Email)" },
@@ -108,16 +107,8 @@ const revenuemanip: CaseData = {
     { id: 'AL-10', datetime: '2026-06-30, 05:15 PM', user: 'Anita Desai', action: 'Receivable Write-off — Desktop, Office' },
   ],
 
-  evidenceBoardPeople: ["Meera Reddy \u2014 CEO", "Karan Joshi \u2014 CFO", "Sanjay Gupta \u2014 Sales Head", "Anita Desai \u2014 Accounts Receivable", "Rajesh Pillai \u2014 Sales Manager", "Priya Malhotra \u2014 External Auditor", "Rs 8,40,000 uncollected from Customer A", "Rs 12,40,000 uncollected from Customer C", "Fictitious contracts for Customer B", "Modified aging report", "C07 \u2014 'collections lagging by 60 days'", "11:45 PM aging report modification", "Revenue growth vs cash collection mismatch", "Invoice INV-2320 billed 3,200 units against a 2,000-unit PO", "Three flagged vendors share incorporation or ownership links to Greenleaf insiders"],
+  evidenceBoardPeople: ["Meera Reddy", "Karan Joshi", "Sanjay Gupta", "Anita Desai", "Rajesh Pillai", "Priya Malhotra"],
 
-  evidenceDrops: [
-  {"id": "evA", "label": "Evidence A \u2014 Bank Statement", "fields": {"Source": "Subpoenaed bank statement", "Finding 1": "Customers A, B, C, and F have never made payments", "Finding 2": "Total outstanding: Rs 28,80,000", "Finding 3": "All invoices are marked as 'paid' in the system"}},
-  {"id": "evB", "label": "Evidence B \u2014 Company Ownership", "fields": {"Source": "Registrar search on the fake customers", "Finding 1": "All four customers were incorporated in the same month", "Finding 2": "Registered address is a mail-forwarding service", "Finding 3": "Same incorporation agent used for all four"}},
-  {"id": "evC", "label": "Evidence C \u2014 Digital Login", "fields": {"Source": "IT security logs", "Finding 1": "Anita Desai's accounts receivable account accessed at 11:45 PM", "Finding 2": "Login originated from an unrecognized device in Chennai", "Finding 3": "Aging reports were modified during this session"}},
-  {"id": "evD", "label": "Evidence D \u2014 Revised Document", "fields": {"Source": "Second look at revenue records", "Finding 1": "Revenue was recognized for all four fake customers", "Finding 2": "Collections were never actually received", "Finding 3": "Adjustments were made to hide the bad debt"}},
-  {"id": "evE", "label": "Evidence E \u2014 The Final Connection", "fields": {"Source": "Redacted bonus payment record", "Finding 1": "Sanjay Gupta received a Rs 28,00,000 bonus for 'exceptional revenue growth'", "Finding 2": "The bonus was approved by Meera Reddy", "Finding 3": "The bonus was paid the same month the fake customers were created"}},
-  {"id": "evF", "label": "Evidence F \u2014 Vendor Overbilling", "fields": {"Source": "Parallel review of vendor payments", "Finding 1": "Three of Greenleaf's five vendors were invoiced above their authorizing purchase orders, no revised PO or GRN on file", "Finding 2": "Two of those three \u2014 Fresh Farms Produce and Natural Packaging \u2014 were registered within the period the aggressive revenue targets began", "Finding 3": "Natural Packaging's incorporation agent matches the one used to set up all four fictitious customer accounts in Evidence B"}}
-  ],
 };
 
 export default revenuemanip;

@@ -4,7 +4,7 @@
 // through a password-gated query, same pattern as every other host action.
 import { query } from "./_generated/server";
 import { v } from "convex/values";
-import { isHostPassword } from "./auth";
+import { requireHost } from "./auth";
 
 const ANSWER_KEYS: Record<string, {
   culprit: string | null;
@@ -63,8 +63,8 @@ const ANSWER_KEYS: Record<string, {
 
 export const getAnswerKey = query({
   args: { password: v.string(), caseId: v.string() },
-  handler: async (ctx, args) => {
-    if (!isHostPassword(args.password)) throw new Error("Wrong password");
+  handler: async (_ctx, args) => {
+    requireHost(args.password);
     return ANSWER_KEYS[args.caseId] ?? null;
   },
 });

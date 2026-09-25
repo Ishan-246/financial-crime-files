@@ -1,21 +1,25 @@
 import { query, mutation } from "./_generated/server";
-import { v } from "convex/values";
-import { isHostPassword } from "./auth";
+import { v, ConvexError } from "convex/values";
+import { requireHost } from "./auth";
 
 export const getMyHints = query({
   args: { teamId: v.id("teams") },
-  handler: async (ctx, args) => {
+  handler: async (ctx, { teamId }) => {
     return await ctx.db
       .query("hintsSent")
-      .withIndex("by_team", (q) => q.eq("teamId", args.teamId))
+      .withIndex("by_team", (q) => q.eq("teamId", teamId))
       .collect();
   },
 });
 
 export const sendHint = mutation({
   args: { password: v.string(), teamId: v.id("teams"), text: v.string() },
-  handler: async (ctx, args) => {
-    if (!isHostPassword(args.password)) throw new Error("Wrong password");
-    await ctx.db.insert("hintsSent", { teamId: args.teamId, text: args.text, sentAt: Date.now() });
+  handler: async (ctx, { password, teamId, text }) => {
+    requireHost(password);
+    const team = await ctx.db.get(teamId);
+    if (!team) throw new ConvexError("Team not found");
+    const clean = text.trim();
+    if (!clean) throw new ConvexError("Hint text is empty");
+    await ctx.db.insert("hintsSent", { teamId, text: clean, sentAt: Date.now() });
   },
 });

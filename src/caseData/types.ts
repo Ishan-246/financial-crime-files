@@ -30,7 +30,6 @@ export interface DocumentSet {
   invoice?: Record<string, any>;
   invoices?: Record<string, any>[];
   totalBilled?: number;
-  flag?: string;
 }
 
 export interface Transaction {
@@ -56,16 +55,10 @@ export interface AuditEntry {
   action: string;
 }
 
-export interface EvidenceDrop {
-  id: string;
-  label: string;
-  fields: Record<string, string>;
-}
-
 // NOTE: this file (and every file in src/caseData/) gets bundled into the
 // JavaScript sent to every participant's browser. NEVER put an answer key,
-// culprit name, or judging rubric in here — that belongs in Convex only
-// (see convex/answerKeys.ts), reachable exclusively through a
+// culprit name, judging rubric, or Round 2 evidence in here — that belongs in Convex only
+// (see convex/answerKeys.ts and convex/evidenceDrops.ts), reachable exclusively through a
 // password-gated query so participants can never read it via DevTools.
 export interface CaseData {
   caseId: string;
@@ -78,6 +71,8 @@ export interface CaseData {
   investigationTime: string;
   briefing: string;
   vendorsUnlockRound: 1 | 2;
+  financialLabels?: [string, string];
+  glossary?: { term: string; meaning: string }[];
   suspects: Suspect[];
   vendors: Vendor[];
   financials: {
@@ -89,5 +84,4 @@ export interface CaseData {
   communications: Communication[];
   auditLog: AuditEntry[];
   evidenceBoardPeople: string[];
-  evidenceDrops: EvidenceDrop[];
 }

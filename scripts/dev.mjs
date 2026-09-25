@@ -1,7 +1,7 @@
 /**
  * Preview/dev orchestrator.
  *
- * Runs the local Convex backend (`convex dev`, watch mode) and the Vite dev
+ * Runs the cal Convex backend (`convex dev`, watch mode) and the Vite dev
  * server as one managed process tree, so the app has a live backend on port
  * 3210 for the whole preview session. `convex dev --once` alone is not enough:
  * it deploys the functions and then shuts the backend down.

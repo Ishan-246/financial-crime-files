@@ -17,12 +17,22 @@ const novatech: CaseData = {
     "electronic components, consulting, and electrical products. The company has " +
     "initiated an internal investigation after identifying transactions and procurement " +
     "records that require further review.\n\n" +
-    "Procurement rules: Purchases above Rs 5 lakh require additional approval. " +
-    "Purchases above Rs 25 lakh require CFO approval. Any change to an approved PO must " +
+    "Procurement rules: Purchases above ₹5 lakh require additional approval. " +
+    "Purchases above ₹25 lakh require CFO approval. Any change to an approved PO must " +
     "be documented and approved. Supplier bank-account changes require independent " +
     "verification. Procurement records must accurately reflect the approved business " +
     "requirement.",
-  vendorsUnlockRound: 2,
+  vendorsUnlockRound: 1,
+  financialLabels: ["FY 2024–25", "FY 2025–26"],
+  glossary: [
+    { term: "Procurement", meaning: "The process of purchasing goods or services for a company." },
+    { term: "Procurement Spend", meaning: "The total amount of money a company spends on purchases." },
+    { term: "PO Amendment", meaning: "An official change made to an already-approved Purchase Order." },
+    { term: "Audit Log", meaning: "A record showing who made a change, what was changed, and when." },
+    { term: "Reconciliation", meaning: "Comparing financial records to check whether the amounts match." },
+    { term: "Internal Controls", meaning: "Company rules and checks designed to prevent errors, fraud, or unauthorized actions." },
+    { term: "Financial Impact", meaning: "The amount of money potentially affected by an irregular activity." },
+  ],
 
   suspects: [
   { id: 'P01', name: 'Arjun Rao', position: 'Chief Financial Officer', responsibilities: ['Major financial approvals', 'Budget oversight', 'Banking and payment controls', 'High-value procurement approvals'] },
@@ -35,44 +45,44 @@ const novatech: CaseData = {
 
   vendors: [
   { id: 'V001', name: 'Precision Packaging Solutions', contact: 'Farah Khan', location: 'Pune', established: '2018', business: 'Packaging Manufacturer', bank: 'HDFC ****4821',
-    spendByYear: { "2022": '14.8 Cr', "2023": '16.2 Cr', "2024": '17.1 Cr', "2025": '18.4 Cr', "2026": '19.2 Cr' },
+    spendByYear: { "2022": '₹14.8 Cr', "2023": '₹16.2 Cr', "2024": '₹17.1 Cr', "2025": '₹18.4 Cr', "2026": '₹19.2 Cr' },
     relationshipSince: '2019', typicalOrderValue: '5 lakh - 12 lakh', poRevisions: 'Rare',
     bankAccountChanges: 'None', paymentDisputes: 'No significant disputes', notes: 'Stable supplier relationship' },
   { id: 'V002', name: 'Nova-Tech Components', contact: 'Karan Bhatia', location: 'Pune', established: '2022', business: 'Electronic Components', bank: 'ICICI ****6714',
-    spendByYear: { "2022": '1.9 Cr', "2023": '2.3 Cr', "2024": '2.8 Cr', "2025": '3.8 Cr', "2026": '6.9 Cr' },
+    spendByYear: { "2022": '₹1.9 Cr', "2023": '₹2.3 Cr', "2024": '₹2.8 Cr', "2025": '₹3.8 Cr', "2026": '₹6.9 Cr' },
     relationshipSince: '2022', typicalOrderValue: '5 lakh - 20 lakh', poRevisions: 'Limited prior to the investigation period',
     bankAccountChanges: 'None', paymentDisputes: 'No formal disputes', notes: '' },
   { id: 'V003', name: 'Zenith Advisory Services', contact: 'Amit Sethi', location: 'Mumbai', established: '2022', business: 'Procurement & Technical Consulting', bank: 'SBI ****1938',
-    spendByYear: { "2022": '3.2 Cr', "2023": '4.4 Cr', "2024": '5.0 Cr', "2025": '5.1 Cr', "2026": '5.7 Cr' },
+    spendByYear: { "2022": '₹3.2 Cr', "2023": '₹4.4 Cr', "2024": '₹5.0 Cr', "2025": '₹5.1 Cr', "2026": '₹5.7 Cr' },
     relationshipSince: '2023', typicalOrderValue: '3 lakh - 9 lakh', poRevisions: 'No significant revisions',
     bankAccountChanges: 'None', paymentDisputes: 'No major disputes', notes: 'Staged payments allowed under certain POs' },
   { id: 'V004', name: 'Brightline Trading', contact: 'Suresh Patil', location: 'Nashik', established: '2020', business: 'Electrical & Power Components', bank: 'Axis ****5206',
-    spendByYear: { "2022": '9.8 Cr', "2023": '10.6 Cr', "2024": '11.1 Cr', "2025": '11.7 Cr', "2026": '12.6 Cr' },
+    spendByYear: { "2022": '₹9.8 Cr', "2023": '₹10.6 Cr', "2024": '₹11.1 Cr', "2025": '₹11.7 Cr', "2026": '₹12.6 Cr' },
     relationshipSince: '2021', typicalOrderValue: '7 lakh - 20 lakh+', poRevisions: 'Occasional operational revisions',
     bankAccountChanges: 'None', paymentDisputes: 'No significant disputes', notes: 'Spending increased gradually' }
   ],
 
   financials: {
     overview: [
-      { metric: "Revenue", lastYear: "Rs 248.0 Cr", thisYear: "Rs 271.5 Cr" },
-      { metric: "Cost of Materials", lastYear: "Rs 128.4 Cr", thisYear: "Rs 151.7 Cr" },
-      { metric: "Operating Expenses", lastYear: "Rs 51.6 Cr", thisYear: "Rs 55.2 Cr" },
-      { metric: "Operating Profit", lastYear: "Rs 68.0 Cr", thisYear: "Rs 64.6 Cr" },
-      { metric: "Procurement Spend", lastYear: "Rs 119.8 Cr", thisYear: "Rs 143.9 Cr" },
+      { metric: "Revenue", lastYear: "₹248.0 Cr", thisYear: "₹271.5 Cr" },
+      { metric: "Cost of Materials", lastYear: "₹128.4 Cr", thisYear: "₹151.7 Cr" },
+      { metric: "Operating Expenses", lastYear: "₹51.6 Cr", thisYear: "₹55.2 Cr" },
+      { metric: "Operating Profit", lastYear: "₹68.0 Cr", thisYear: "₹64.6 Cr" },
+      { metric: "Procurement Spend", lastYear: "₹119.8 Cr", thisYear: "₹143.9 Cr" },
     ],
     vendorSpend: [
-      { vendor: "Precision Packaging Solutions", lastYear: "Rs 18.4 Cr", thisYear: "Rs 19.2 Cr" },
-      { vendor: "Nova-Tech Components", lastYear: "Rs 5.7 Cr", thisYear: "Rs 6.9 Cr" },
-      { vendor: "Zenith Advisory Services", lastYear: "Rs 5.1 Cr", thisYear: "Rs 5.7 Cr" },
-      { vendor: "Brightline Trading", lastYear: "Rs 11.7 Cr", thisYear: "Rs 12.6 Cr" },
+      { vendor: "Precision Packaging Solutions", lastYear: "₹18.4 Cr", thisYear: "₹19.2 Cr" },
+      { vendor: "Nova-Tech Components", lastYear: "₹5.7 Cr", thisYear: "₹6.9 Cr" },
+      { vendor: "Zenith Advisory Services", lastYear: "₹5.1 Cr", thisYear: "₹5.7 Cr" },
+      { vendor: "Brightline Trading", lastYear: "₹11.7 Cr", thisYear: "₹12.6 Cr" },
     ],
   },
 
   documents: [
   {"id": "SET-A", "vendor": "Precision Packaging Solutions", "po": {"number": "PO-2417", "date": "12 August 2025", "item": "Packaging Boxes", "quantity": 20000, "unitPrice": 48, "total": 960000, "approval": "Meera Kapoor"}, "invoice": {"number": "INV-PS-8821", "date": "21 August 2025", "item": "Packaging Boxes", "quantity": 20000, "unitPrice": 48, "total": 960000}},
   {"id": "SET-B", "vendor": "Precision Packaging Solutions", "po": {"number": "PO-2672", "date": "5 January 2026", "item": "Packaging Boxes", "quantity": 21000, "unitPrice": 51, "total": 1071000}, "invoice": {"number": "INV-PS-9014", "date": "17 January 2026", "item": "Packaging Boxes", "quantity": 21000, "unitPrice": 51, "total": 1071000}},
-  {"id": "SET-C", "vendor": "Nova-Tech Components", "po": {"number": "PO-2571", "date": "15 September 2025", "item": "PCB Connector Modules", "quantity": 2000, "unitPrice": 1850, "total": 3700000, "approval": "Meera Kapoor + Arjun Rao"}, "invoice": {"number": "INV-NT-1048", "date": "25 September 2025", "item": "PCB Connector Modules", "quantity": 2400, "unitPrice": 1850, "total": 4440000}, "flag": "Invoice quantity (2,400) exceeds PO quantity (2,000)"},
-  {"id": "SET-D", "vendor": "Nova-Tech Components", "po": {"number": "PO-2720", "date": "9 February 2026", "item": "Sensor Interface Modules", "quantity": 800, "unitPrice": 1900, "total": 1520000}, "invoice": {"number": "INV-NT-1167", "date": "19 February 2026", "item": "Sensor Interface Modules", "quantity": 900, "unitPrice": 1900, "total": 1710000}, "flag": "Invoice quantity (900) exceeds PO quantity (800)"},
+  {"id": "SET-C", "vendor": "Nova-Tech Components", "po": {"number": "PO-2571", "date": "15 September 2025", "item": "PCB Connector Modules", "quantity": 2000, "unitPrice": 1850, "total": 3700000, "approval": "Meera Kapoor + Arjun Rao"}, "invoice": {"number": "INV-NT-1048", "date": "25 September 2025", "item": "PCB Connector Modules", "quantity": 2400, "unitPrice": 1850, "total": 4440000}},
+  {"id": "SET-D", "vendor": "Nova-Tech Components", "po": {"number": "PO-2720", "date": "9 February 2026", "item": "Sensor Interface Modules", "quantity": 800, "unitPrice": 1900, "total": 1520000}, "invoice": {"number": "INV-NT-1167", "date": "19 February 2026", "item": "Sensor Interface Modules", "quantity": 900, "unitPrice": 1900, "total": 1710000}},
   {"id": "SET-E", "vendor": "Zenith Advisory Services", "po": {"number": "PO-2618", "service": "Technical Sourcing Consultation", "total": 840000}, "invoices": [{"number": "ZAS-2618-01", "installment": "1 of 2", "amount": 420000}, {"number": "ZAS-2618-02", "installment": "2 of 2", "amount": 420000}], "totalBilled": 840000},
   {"id": "SET-F", "vendor": "Zenith Advisory Services", "po": {"number": "PO-2759", "service": "Consulting", "total": 590000}, "invoices": [{"number": "ZAS-2759-01", "installment": "1 of 2", "amount": 295000}, {"number": "ZAS-2759-02", "installment": "2 of 2", "amount": 295000}], "totalBilled": 590000},
   {"id": "SET-G", "vendor": "Brightline Trading", "po": {"number": "PO-2694", "item": "Power Control Boards", "quantity": 600, "unitPrice": 18500, "total": 11100000}, "invoice": {"item": "Power Control Boards", "quantity": 600, "unitPrice": 18500, "total": 11100000}},
@@ -160,14 +170,6 @@ const novatech: CaseData = {
     "Rohan Malhotra", "Farah Khan", "Karan Bhatia", "Amit Sethi", "Suresh Patil",
   ],
 
-  evidenceDrops: [
-  {"id": "drop1", "label": "Document Drop 1 \u2014 Packaging GRN", "fields": {"PO Number": "PO-2814", "Receipt Date": "21 February 2026", "Material Received": "Packaging Material", "Quantity Ordered": "20,000 units", "Quantity Received": "20,000 units"}},
-  {"id": "drop2", "label": "Document Drop 2 \u2014 Brightline Payment", "fields": {"PO Number": "PO-2694", "Payment Date": "20 January 2026", "Invoice Amount": "Rs 1,11,00,000", "Payment Requested": "Rs 1,11,00,000", "Verification Status": "Completed", "Approval Status": "Approved", "Payment Status": "Processed"}},
-  {"id": "drop3", "label": "Document Drop 3 \u2014 PO-2571 Revision Record", "fields": {"PO Number": "PO-2571", "Record Date": "16 September 2025", "Quantity": "Previous: 2,000 | Updated: 2,400", "Unit Price": "Rs 1,850", "Total Value": "Previous: Rs 37,00,000 | Updated: Rs 44,40,000", "Reason Recorded": "Updated component requirement", "Approval Status": "Approved"}},
-  {"id": "drop4", "label": "Document Drop 4 \u2014 Zenith Service Certification", "fields": {"PO Number": "PO-2618", "Service Period": "November 2025", "Service Status": "Completed", "Contracted Amount": "Rs 8,40,000", "Amount Certified": "Rs 8,40,000"}},
-  {"id": "drop5", "label": "Document Drop 5 \u2014 PO-2720 Revision Record", "fields": {"PO Number": "PO-2720", "Record Date": "12 February 2026", "Quantity": "Previous: 800 | Updated: 900", "Unit Price": "Rs 1,900", "Total Value": "Previous: Rs 15,20,000 | Updated: Rs 17,10,000", "Approval Status": "Approved"}},
-  {"id": "drop6", "label": "Document Drop 6 \u2014 Brightline GRN", "fields": {"PO Number": "PO-2731", "Delivery Date": "27 February 2026", "Material": "Power Control Boards", "Quantity Ordered": "480", "Quantity Delivered": "480", "Unit Price": "Rs 18,000", "Total Value": "Rs 86,40,000", "Inspection": "Accepted"}}
-  ],
 
 };
 

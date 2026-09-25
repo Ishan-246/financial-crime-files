@@ -32,10 +32,10 @@ const silentbleed: CaseData = {
 
   financials: {
     overview: [
-      { metric: "Revenue", lastYear: "Rs 22.0 Cr", thisYear: "Rs 28.5 Cr" },
-      { metric: "Expenses", lastYear: "Rs 17.5 Cr", thisYear: "Rs 26.8 Cr" },
-      { metric: "Profit", lastYear: "Rs 4.5 Cr", thisYear: "Rs 1.7 Cr" },
-      { metric: "Cash on Hand", lastYear: "Rs 5.1 Cr", thisYear: "Rs 92 Lakh" },
+      { metric: "Revenue", lastYear: "₹22.0 Cr", thisYear: "₹28.5 Cr" },
+      { metric: "Expenses", lastYear: "₹17.5 Cr", thisYear: "₹26.8 Cr" },
+      { metric: "Profit", lastYear: "₹4.5 Cr", thisYear: "₹1.7 Cr" },
+      { metric: "Cash on Hand", lastYear: "₹5.1 Cr", thisYear: "₹92 Lakh" },
     ],
     vendorSpend: [],
   },
@@ -44,11 +44,11 @@ const silentbleed: CaseData = {
   {"id": "SET-1", "vendor": "Prime Office Supplies", "po": {"number": "PO-101", "date": "01-Jul", "item": "Office Chairs", "quantity": 10, "unitPrice": 12500, "total": 125000, "approval": "Ananya Sharma"}, "invoice": {"number": "INV-PR-44", "date": "02-Jul", "item": "Office Chairs", "quantity": 10, "unitPrice": 12500, "total": 125000}},
   {"id": "SET-2", "vendor": "Vertex Electronics", "po": {"number": "PO-401", "date": "10-Jul", "item": "Dev Laptops", "quantity": 20, "unitPrice": 45000, "total": 900000, "approval": "Dev Kumar"}, "invoice": {"number": "INV-VE-881", "date": "11-Jul", "item": "Dev Laptops", "quantity": 20, "unitPrice": 45000, "total": 900000}},
   {"id": "SET-3", "vendor": "Horizon Marketing", "po": {"number": "PO-602", "date": "02-Aug", "item": "Monthly Ad Retainer", "quantity": 1, "unitPrice": null, "total": 300000, "approval": "Ananya Sharma"}, "invoice": {"number": "INV-HM-09", "date": "04-Aug", "item": "Monthly Ad Retainer", "quantity": 1, "total": 300000}},
-  {"id": "SET-4", "vendor": "Vertex Electronics", "po": {"number": "PO-442", "date": "08-Aug", "item": "Dev Laptops", "quantity": 50, "unitPrice": 62000, "total": 3100000, "approval": "Dev Kumar"}, "invoice": {"number": "INV-VE-895", "date": "09-Aug", "item": "Dev Laptops", "quantity": 50, "unitPrice": 62000, "total": 3100000}, "flag": "Unit price jumped from Rs 45,000 (SET-2) to Rs 62,000 with no explanation on file"},
+  {"id": "SET-4", "vendor": "Vertex Electronics", "po": {"number": "PO-442", "date": "08-Aug", "item": "Dev Laptops", "quantity": 50, "unitPrice": 62000, "total": 3100000, "approval": "Dev Kumar"}, "invoice": {"number": "INV-VE-895", "date": "09-Aug", "item": "Dev Laptops", "quantity": 50, "unitPrice": 62000, "total": 3100000}},
   {"id": "SET-5", "vendor": "CloudScale Systems", "po": {"number": "PO-903", "date": "27-Sep", "item": "Server Instances", "quantity": 5, "unitPrice": 90000, "total": 450000, "approval": "Dev Kumar"}, "invoice": {"number": "INV-CS-112", "date": "28-Sep", "item": "Server Instances", "quantity": 5, "unitPrice": 90000, "total": 450000}},
-  {"id": "SET-6", "vendor": "Vertex Electronics", "po": {"number": "PO-489", "date": "03-Sep", "item": "Local Servers", "quantity": 18, "unitPrice": 200000, "total": 3600000, "approval": "Dev Kumar"}, "invoice": {"number": "INV-VE-912", "date": "04-Sep", "item": "Local Servers", "quantity": 18, "unitPrice": 200000, "total": 3600000}, "flag": "PO originally raised for 10 servers per Dev's own email (C06); invoice and final PO show 18"},
+  {"id": "SET-6", "vendor": "Vertex Electronics", "po": {"number": "PO-489", "date": "03-Sep", "item": "Local Servers", "quantity": 18, "unitPrice": 200000, "total": 3600000, "approval": "Dev Kumar"}, "invoice": {"number": "INV-VE-912", "date": "04-Sep", "item": "Local Servers", "quantity": 18, "unitPrice": 200000, "total": 3600000}},
   {"id": "SET-7", "vendor": "Prime Office Supplies", "po": {"number": "PO-105", "date": "01-Oct", "item": "Standing Desks", "quantity": 5, "unitPrice": 22000, "total": 110000, "approval": "Ananya Sharma"}, "invoice": {"number": "INV-PR-61", "date": "02-Oct", "item": "Standing Desks", "quantity": 5, "unitPrice": 22000, "total": 110000}},
-  {"id": "SET-8", "vendor": "Vertex Electronics", "po": {"number": "PO-510", "date": "04-Oct", "item": "HD Monitors", "quantity": 40, "unitPrice": 25000, "total": 1000000, "approval": "Dev Kumar"}, "invoice": {"number": "INV-VE-940", "date": "05-Oct", "item": "HD Monitors", "quantity": 40, "unitPrice": 25000, "total": 1000000}, "flag": "HR Director notes (C09) identical monitors cost Rs 12,000 retail vs Rs 25,000 billed here"}
+  {"id": "SET-8", "vendor": "Vertex Electronics", "po": {"number": "PO-510", "date": "04-Oct", "item": "HD Monitors", "quantity": 40, "unitPrice": 25000, "total": 1000000, "approval": "Dev Kumar"}, "invoice": {"number": "INV-VE-940", "date": "05-Oct", "item": "HD Monitors", "quantity": 40, "unitPrice": 25000, "total": 1000000}}
   ],
 
   transactions: [
@@ -87,35 +87,29 @@ const silentbleed: CaseData = {
   communications: [
     { id: 'C01', date: '2026-07-28', from: 'Ananya Sharma', to: 'Horizon Marketing', message: 'If you want us to renew the Q3 advertising contract, I need a 15% cut on my desk by Friday.' },
     { id: 'C02', date: '2026-08-01', from: 'Arvind Desai', to: 'All Department Heads', message: 'I am tired of vendors threatening to pause services because a Department Head is out of office. A master list of all Department Head portal passwords will be kept in the Finance safe. Rohan, you manage the list.' },
-    { id: 'C03', date: '2026-08-08, 09:15 AM', from: 'Dev Kumar', to: 'Rohan Mehta', message: 'Rohan, I just generated PO-442 in the system for the 50 new laptops. Kept them at our standard Rs 45k bulk rate. Process it quickly, we need them by Monday.' },
-    { id: 'C04', date: '2026-08-09', from: 'Rohan Mehta', to: 'Arvind Desai', message: "Arvind, I am formally objecting to Vertex's billing. Dev is authorizing Rs 62k per laptop now. The system cleared it because the PO matches the invoice, but it's a massive overspend." },
+    { id: 'C03', date: '2026-08-08, 09:15 AM', from: 'Dev Kumar', to: 'Rohan Mehta', message: 'Rohan, I just generated PO-442 in the system for the 50 new laptops. Kept them at our standard ₹45k bulk rate. Process it quickly, we need them by Monday.' },
+    { id: 'C04', date: '2026-08-09', from: 'Rohan Mehta', to: 'Arvind Desai', message: "Arvind, I am formally objecting to Vertex's billing. Dev is authorizing ₹62k per laptop now. The system cleared it because the PO matches the invoice, but it's a massive overspend." },
     { id: 'C05', date: '2026-08-09', from: 'Arvind Desai', to: 'Rohan Mehta', message: "Rohan, stop playing auditor. Dev said he needs the gear. If the system clears it, you cut the check immediately. Don't slow us down." },
     { id: 'C06', date: '2026-09-03, 10:00 AM', from: 'Dev Kumar', to: 'Rohan Mehta', message: 'PO-489 is in the system for the 10 servers. Boarding my 14-hour flight to Singapore now. Zero Wi-Fi until tomorrow.' },
     { id: 'C07', date: '2026-09-04, 10:15 AM', from: 'Rohan Mehta', to: 'Dev Kumar', message: 'Dev, Vertex billed us for 18 servers today. This is out of control.' },
     { id: 'C08', date: '2026-09-04, 11:30 PM', from: 'Dev Kumar', to: 'Rohan Mehta', message: 'Vertex had to bundle the extra server units due to supply chain shortages. Stop questioning my vendor relationships, Rohan. I just updated the PO to match. Force clear the payment.' },
-    { id: 'C09', date: '2026-10-06', from: 'HR Director', to: 'Dev Kumar', message: 'Dev, why is your department spending Rs 25k on standard desk monitors? My team just ordered the exact same models on Amazon for Rs 12k.' },
+    { id: 'C09', date: '2026-10-06', from: 'HR Director', to: 'Dev Kumar', message: 'Dev, why is your department spending ₹25k on standard desk monitors? My team just ordered the exact same models on Amazon for ₹12k.' },
     { id: 'C10', date: '2026-10-05', from: 'Rohan Mehta', to: 'Personal Email', message: "I can't take this company anymore. Dev is completely out of control with the hardware budget and Arvind just lets him do it. I'm updating my resume this weekend." },
     { id: 'C11', date: '2026-10-06, 09:00 AM', from: 'Dev Kumar', to: 'IT Security Team', message: 'Guys, why are there login alerts on my portal account from a MacBook? I exclusively use a Lenovo ThinkPad Windows machine. Check the logs when you have a minute.' },
   ],
 
   auditLog: [
-    { id: 'AL-01', datetime: '2026-07-10, 09:14 AM', user: 'Dev Kumar', action: 'Created PO-401 (Total: Rs 9,00,000) — Office IP (Windows PC)' },
-    { id: 'AL-02', datetime: '2026-08-08, 09:12 AM', user: 'Dev Kumar', action: 'Created PO-442 (Total: Rs 22,50,000) — Office IP (Windows PC)' },
+    { id: 'AL-01', datetime: '2026-07-10, 09:14 AM', user: 'Dev Kumar', action: 'Created PO-401 (Total: ₹9,00,000) — Office IP (Windows PC)' },
+    { id: 'AL-02', datetime: '2026-08-08, 09:12 AM', user: 'Dev Kumar', action: 'Created PO-442 (Total: ₹22,50,000) — Office IP (Windows PC)' },
     { id: 'AL-03', datetime: '2026-08-08, 11:45 PM', user: 'Dev Kumar (account)', action: 'Edited PO-442 — Home IP (MacBook)' },
     { id: 'AL-04', datetime: '2026-08-10, 09:30 AM', user: 'Rohan Mehta', action: 'Processed Payment TXN-4013 - Perfect 2-Way Match — Office IP (MacBook)' },
-    { id: 'AL-05', datetime: '2026-09-03, 09:55 AM', user: 'Dev Kumar', action: 'Created PO-489 (Total: Rs 20,00,000) — Office IP (Windows PC)' },
+    { id: 'AL-05', datetime: '2026-09-03, 09:55 AM', user: 'Dev Kumar', action: 'Created PO-489 (Total: ₹20,00,000) — Office IP (Windows PC)' },
     { id: 'AL-06', datetime: '2026-09-03, 11:30 PM', user: 'Dev Kumar (account)', action: 'Edited PO-489 — Home IP (MacBook)' },
     { id: 'AL-07', datetime: '2026-09-05, 10:05 AM', user: 'Rohan Mehta', action: 'Processed Payment TXN-4019 - Perfect 2-Way Match — Office IP (MacBook)' },
   ],
 
-  evidenceBoardPeople: [
-    "Dev Kumar", "Rohan Mehta", "Arvind Desai", "Ananya Sharma",
-    "CloudScale Systems", "Vertex Electronics", "Prime Office Supplies", "Horizon Marketing",
-  ],
+  evidenceBoardPeople: ["Dev Kumar", "Rohan Mehta", "Arvind Desai", "Ananya Sharma"],
 
-  evidenceDrops: [
-  {"id": "drop1", "label": "The Evidence \u2014 Singapore Airlines Manifest & Wi-Fi Logs", "fields": {"Source": "Subpoenaed flight records and in-flight connectivity logs", "Finding": "Dev Kumar boarded Flight SQ421 to Singapore at 10:15 AM on September 3rd. His seat did not purchase or connect to the aircraft's Wi-Fi.", "Key Fact": "Dev Kumar was completely offline over the Indian Ocean at 11:30 PM on September 4th \u2014 the exact minute his portal account performed the System Edit on PO-489's server quantities, and the exact minute the aggressive Slack/email message (C08) was sent to Rohan."}}
-  ],
 
 };
 
